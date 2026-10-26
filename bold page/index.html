@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CARTograph / Bold | Lynette Hemingway</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+    <script src="../shared/case-study.js" defer></script>
+    <link rel="stylesheet" href="bold.css">
+    <script src="bold.js" defer></script>
+  </head>
+  <body data-page="bold">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html">Lynette Hemingway<span>Case studies</span></a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../editorial%20page/">Editorial</a>
+        <a href="../bold%20page/" aria-current="page">Bold</a>
+        <a href="../minimal%20page/">Minimal</a>
+        <a class="vote-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdINMsG0s32Fde58L61jnfgqD9g3DedLxMyUZ9y7N_wOqx7ig/viewform" target="_blank" rel="noopener noreferrer">Vote &#8599;</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="bold-cover" aria-labelledby="project-title">
+        <div class="bold-project-line">
+          <span class="project-logo"><img src="../assets/branding/carto.jpg" alt="CARTograph logo" width="4096" height="6516"></span>
+          <span>Product design / Hackathon project</span>
+          <a href="https://devpost.com/software/cartograph" target="_blank" rel="noopener noreferrer">View on Devpost &#8599;</a>
+        </div>
+        <h1 id="project-title">CARTOGRAPH</h1>
+        <div class="bold-cover-bottom">
+          <p>I designed a grocery-planning app that helps shoppers compare prices and decide whether another store is worth the drive.</p>
+          <dl class="bold-facts">
+            <div><dt>Role</dt><dd>Product Designer</dd></div>
+            <div><dt>Tool</dt><dd>Figma</dd></div>
+            <div><dt>Timeline</dt><dd>Hackathon sprint</dd></div>
+            <div><dt>Result</dt><dd>2nd place, Esri hackathon</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="bold-walkthrough" aria-labelledby="walkthrough-title">
+        <div class="walkthrough-menu">
+          <h2 id="walkthrough-title">Walk through<br>the app.</h2>
+          <p>Select a screen to see where it fits.</p>
+          <div class="walkthrough-steps" role="tablist" aria-label="App walkthrough" aria-orientation="vertical">
+            <button type="button" role="tab" id="flow-0" aria-controls="flow-panel" aria-selected="true" data-screen="0"><span>01</span>Start here<span aria-hidden="true">&#8599;</span></button>
+            <button type="button" role="tab" id="flow-1" aria-controls="flow-panel" aria-selected="false" tabindex="-1" data-screen="1"><span>02</span>Build a list<span aria-hidden="true">&#8599;</span></button>
+            <button type="button" role="tab" id="flow-2" aria-controls="flow-panel" aria-selected="false" tabindex="-1" data-screen="2"><span>03</span>Compare routes<span aria-hidden="true">&#8599;</span></button>
+            <button type="button" role="tab" id="flow-3" aria-controls="flow-panel" aria-selected="false" tabindex="-1" data-screen="3"><span>04</span>Import a recipe<span aria-hidden="true">&#8599;</span></button>
+            <button type="button" role="tab" id="flow-4" aria-controls="flow-panel" aria-selected="false" tabindex="-1" data-screen="4"><span>05</span>Ask Carter<span aria-hidden="true">&#8599;</span></button>
+            <button type="button" role="tab" id="flow-5" aria-controls="flow-panel" aria-selected="false" tabindex="-1" data-screen="5"><span>06</span>Set preferences<span aria-hidden="true">&#8599;</span></button>
+            <button type="button" role="tab" id="flow-6" aria-controls="flow-panel" aria-selected="false" tabindex="-1" data-screen="6"><span>07</span>Sign in<span aria-hidden="true">&#8599;</span></button>
+          </div>
+        </div>
+        <div class="walkthrough-stage" id="flow-panel" role="tabpanel" aria-labelledby="flow-0" tabindex="0">
+          <div class="screen-composition" aria-hidden="true">
+            <img class="companion-screen screen-before" id="flow-before" src="../assets/screens/gallery.png" alt="" width="1956" height="4000">
+            <img class="companion-screen screen-after" id="flow-after" src="../assets/screens/editlist.png" alt="" width="1206" height="2622">
+          </div>
+          <figure class="flow-figure">
+            <img id="flow-image" src="../assets/screens/original.png" alt="Home screen with shopping shortcuts and a map" width="1206" height="2622">
+            <figcaption id="flow-caption">Home brings lists, nearby stores, and recent activity together.</figcaption>
+          </figure>
+          <div class="flow-controls"><button type="button" id="flow-previous" aria-label="Previous app screen">&#8592;</button><span id="flow-position" aria-live="polite" aria-atomic="true">Home / 1 of 7</span><button type="button" id="flow-next" aria-label="Next app screen">&#8594;</button></div>
+        </div>
+      </section>
+      <section class="bold-case" aria-labelledby="case-heading">
+        <div class="bold-case-heading"><h2 id="case-heading">Behind the design.</h2><button type="button" id="reading-mode" aria-pressed="false" hidden>Show full case study</button></div>
+        <div class="chapter-selector" role="tablist" aria-label="Case-study chapters" id="chapter-tabs"></div>
+        <div id="bold-story">
+          <p>Read the <a href="https://devpost.com/software/cartograph">project on Devpost</a>.</p>
+        </div>
+        <div class="chapter-controls" id="chapter-controls" hidden><button type="button" id="chapter-previous">&#8592; Previous chapter</button><span id="chapter-position" aria-live="polite" aria-atomic="true">1 / 7</span><button type="button" id="chapter-next">Next chapter &#8594;</button></div>
+      </section>
+      <section class="compare-section">
+        <h2>Which version did you prefer?</h2>
+        <p>Compare the other layouts, then use the survey to tell me which one you liked most.</p>
+        <div class="edition-links"><a href="../editorial%20page/">Editorial <span aria-hidden="true">&#8599;</span></a><a href="../minimal%20page/">Minimal <span aria-hidden="true">&#8599;</span></a></div>
+        <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdINMsG0s32Fde58L61jnfgqD9g3DedLxMyUZ9y7N_wOqx7ig/viewform" target="_blank" rel="noopener noreferrer">Vote &#8599;</a>
+      </section>
+    </main>
+    <footer class="site-footer"><a href="https://lynettehemingway.com/">Lynette Hemingway</a><span>A case study on case studies</span></footer>
+  </body>
+</html>

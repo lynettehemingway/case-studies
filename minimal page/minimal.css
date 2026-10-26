@@ -1,0 +1,81 @@
+﻿/* Minimal stays in one viewport. Text is paginated to the available height. */
+html:has([data-page="minimal"]) { height: 100%; overflow: hidden; }
+[data-page="minimal"] {
+  --paper: #fff;
+  --ink: #252a27;
+  --muted: #626863;
+  --line: #e0e4df;
+  --accent: #245c37;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+[data-page="minimal"] .site-header { min-height: 64px; flex: 0 0 auto; }
+[data-page="minimal"] main { width: 100%; max-width: 1240px; min-height: 0; flex: 1; display: flex; flex-direction: column; padding: 20px 4%; }
+[data-page="minimal"] .site-footer { flex: 0 0 auto; padding: 12px 0; font-size: 10px; }
+.minimal-title { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+.minimal-title > div { display: flex; gap: 12px; align-items: center; }
+.minimal-title .project-logo { width: 32px; height: 32px; border-radius: 6px; }
+.minimal-title h1 { margin: 0; font-size: 24px; letter-spacing: -.04em; font-weight: 500; }
+.minimal-title > a { font-size: 11px; border-bottom: 1px solid; }
+.minimal-view-switch { display: none; }
+.minimal-workspace { min-height: 0; flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 8%; }
+.minimal-reader { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.reader-toolbar { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+.reader-toolbar label { font-size: 10px; color: var(--muted); }
+.reader-toolbar select { width: 100%; padding: 10px 28px 10px 0; border: 0; border-bottom: 1px solid var(--line); background: #fff; color: var(--ink); font: 12px Arial, sans-serif; }
+#reader-heading { margin: 0 0 20px; font-size: clamp(20px, 2.5vw, 32px); font-weight: 500; letter-spacing: -.035em; line-height: 1.2; }
+#reader-content { flex: 1; min-height: 0; overflow: hidden; font-size: 15px; line-height: 1.8; }
+#reader-content p { margin-bottom: 16px; }
+#reader-content ul, #reader-content ol { padding-left: 22px; margin: 0 0 12px; }
+.reader-controls, .explorer-controls { display: flex; justify-content: space-between; align-items: center; flex: 0 0 auto; margin-top: 12px; font-size: 11px; color: var(--muted); }
+.reader-controls button, .explorer-controls button { width: 40px; height: 32px; background: #fff; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); cursor: pointer; }
+.reader-controls button:disabled { opacity: .3; cursor: default; }
+.reader-controls button:hover:not(:disabled), .explorer-controls button:hover { background: #f3f5f2; }
+.screen-explorer { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.explorer-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.explorer-heading h2 { margin: 0; font-size: 12px; font-weight: 500; }
+.explorer-heading > span { font-size: 10px; color: var(--muted); }
+.screen-tabs { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 12px; }
+.screen-tabs button { border: 0; border-radius: 4px; padding: 6px 8px; background: transparent; color: var(--muted); font-size: 11px; cursor: pointer; }
+.screen-tabs button[aria-selected="true"] { background: #edf1ec; color: var(--ink); }
+#screen-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #f6f7f5; border-radius: 6px; padding: 16px; }
+.screen-zoom { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; border: 0; padding: 0; background: transparent; color: var(--muted); cursor: zoom-in; }
+.screen-zoom img { min-height: 0; height: 0; flex: 1; width: 100%; object-fit: contain; }
+.screen-zoom span { font-size: 10px; }
+#screen-caption { flex: 0 0 auto; font-size: 11px; line-height: 1.5; margin: 12px 0 0; text-align: center; color: var(--muted); }
+.screen-dialog { padding: 16px; border: 1px solid var(--line); border-radius: 6px; width: min(94vw, 600px); height: 92dvh; max-height: 92dvh; overflow: hidden; background: #fff; color: var(--ink); }
+.screen-dialog[open] { display: flex; flex-direction: column; }
+.screen-dialog::backdrop { background: #15201888; }
+.dialog-heading { display: flex; justify-content: space-between; gap: 20px; align-items: center; flex: 0 0 auto; margin-bottom: 16px; }
+.dialog-heading h2 { font-size: 14px; font-weight: 500; margin: 0; }
+.dialog-heading button { border: 1px solid var(--line); padding: 8px 12px; background: #fff; color: var(--ink); font-size: 12px; cursor: pointer; }
+.screen-dialog > img { min-height: 0; height: 0; flex: 1; width: 100%; object-fit: contain; }
+@media (max-width: 760px) {
+  [data-page="minimal"] .site-header { padding: 10px 0; gap: 8px; min-height: 0; }
+  [data-page="minimal"] .brand { font-size: 12px; }
+  [data-page="minimal"] .brand span { font-size: 10px; }
+  [data-page="minimal"] .site-header nav { font-size: 11px; gap: 10px; }
+  [data-page="minimal"] main { padding-top: 12px; padding-bottom: 12px; }
+  [data-page="minimal"] .site-footer { padding: 8px 0; }
+  [data-page="minimal"] .site-footer > span { display: none; }
+  .minimal-title { margin-bottom: 12px; }
+  .minimal-title h1 { font-size: 22px; }
+  .minimal-view-switch { display: flex; gap: 16px; margin-bottom: 16px; }
+  .minimal-view-switch button { border: 0; padding: 4px 0; background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; }
+  .minimal-view-switch button[aria-pressed="true"] { border-bottom: 1px solid var(--ink); color: var(--ink); }
+  .minimal-workspace { grid-template-columns: 1fr; gap: 0; }
+  .minimal-workspace[data-view="read"] .screen-explorer, .minimal-workspace[data-view="screens"] .minimal-reader { display: none; }
+  .reader-toolbar { margin-bottom: 16px; }
+  #reader-heading { font-size: 24px; margin-bottom: 16px; }
+}
+@media (max-height: 500px) {
+  .minimal-title { margin-bottom: 8px; }
+  .minimal-title .project-logo { display: none; }
+  .reader-toolbar { margin-bottom: 8px; }
+  #reader-heading { font-size: 18px; margin-bottom: 8px; }
+  #reader-content { font-size: 13px; line-height: 1.6; }
+  .minimal-view-switch { margin-bottom: 8px; }
+  [data-page="minimal"] .site-footer { display: none; }
+}

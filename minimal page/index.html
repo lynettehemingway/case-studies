@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CARTograph / Minimal | Lynette Hemingway</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+    <script src="../shared/case-study.js" defer></script>
+    <link rel="stylesheet" href="minimal.css">
+    <script src="minimal.js" defer></script>
+  </head>
+  <body data-page="minimal">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html">Lynette Hemingway<span>Case studies</span></a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../editorial%20page/">Editorial</a>
+        <a href="../bold%20page/">Bold</a>
+        <a href="../minimal%20page/" aria-current="page">Minimal</a>
+        <a class="vote-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdINMsG0s32Fde58L61jnfgqD9g3DedLxMyUZ9y7N_wOqx7ig/viewform" target="_blank" rel="noopener noreferrer">Vote &#8599;</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="minimal-title"><div><span class="project-logo"><img src="../assets/branding/carto.jpg" alt="CARTograph logo" width="4096" height="6516"></span><h1>CARTograph</h1></div><a href="https://devpost.com/software/cartograph" target="_blank" rel="noopener noreferrer">Devpost &#8599;</a></section>
+      <div class="minimal-view-switch" role="group" aria-label="View"><button type="button" id="show-reading" aria-pressed="true">Read</button><button type="button" id="show-screens" aria-pressed="false">Screens</button></div>
+      <div class="minimal-workspace" data-view="read">
+        <section class="minimal-reader" aria-labelledby="reader-heading">
+          <div class="reader-toolbar"><label for="chapter-picker">Case study</label><select id="chapter-picker"><option>Loading chapters</option></select></div>
+          <h2 id="reader-heading">CARTograph</h2>
+          <div id="reader-content" tabindex="0"><p>Read the <a href="https://devpost.com/software/cartograph">project on Devpost</a>.</p></div>
+          <div class="reader-controls"><button type="button" id="previous-page" aria-label="Previous reading page">&#8592;</button><span id="reading-position" aria-live="polite" aria-atomic="true">1 / 1</span><button type="button" id="next-page" aria-label="Next reading page">&#8594;</button></div>
+        </section>
+        <section class="screen-explorer" aria-labelledby="explorer-heading">
+          <div class="explorer-heading"><h2 id="explorer-heading">Explore the screens</h2><span id="screen-count">1 / 7</span></div>
+          <div class="screen-tabs" role="tablist" aria-label="App screens">
+            <button type="button" role="tab" id="tab-home" aria-selected="true" aria-controls="screen-panel" data-screen="0">Home</button>
+            <button type="button" role="tab" id="tab-list" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="1">List</button>
+            <button type="button" role="tab" id="tab-routes" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="2">Routes</button>
+            <button type="button" role="tab" id="tab-recipes" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="3">Recipes</button>
+            <button type="button" role="tab" id="tab-carter" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="4">Carter</button>
+            <button type="button" role="tab" id="tab-profile" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="5">Profile</button>
+            <button type="button" role="tab" id="tab-signin" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="6">Sign-in</button>
+          </div>
+          <div id="screen-panel" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
+            <button class="screen-zoom" id="open-screen" type="button" aria-label="Enlarge Home screen">
+              <img id="active-screen" src="../assets/screens/original.png" alt="Home screen with shopping shortcuts, nearby deals, and a map" width="1206" height="2622">
+              <span>Click to enlarge &#8599;</span>
+            </button>
+            <p id="screen-caption">The starting point for lists, nearby stores, and recent activity.</p>
+          </div>
+          <div class="explorer-controls">
+            <button type="button" id="previous-screen" aria-label="Previous screen">&#8592;</button>
+            <span id="screen-name" aria-live="polite" aria-atomic="true">Home</span>
+            <button type="button" id="next-screen" aria-label="Next screen">&#8594;</button>
+          </div>
+        </section>
+      </div>
+      <dialog class="screen-dialog" id="screen-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-heading"><h2 id="dialog-title">Home screen</h2><button type="button" id="close-screen">Close &#215;</button></div>
+        <img id="enlarged-screen" src="../assets/screens/original.png" alt="Home screen with shopping shortcuts, nearby deals, and a map" width="1206" height="2622">
+      </dialog>
+    </main>
+    <footer class="site-footer"><a href="https://lynettehemingway.com/">Lynette Hemingway</a><span>Product Designer &middot; Figma &middot; Hackathon sprint &middot; 2nd place</span></footer>
+  </body>
+</html>

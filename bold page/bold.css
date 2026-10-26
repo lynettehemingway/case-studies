@@ -1,0 +1,123 @@
+/* Bold uses a dark canvas, large type, and interactive chapter navigation. */
+[data-page="bold"] {
+  --paper: #111;
+  --ink: #f5f5f2;
+  --muted: #b1b1ad;
+  --line: #41413f;
+  --surface: #1b1b1a;
+  --accent: #fff;
+  background: var(--paper);
+}
+
+[hidden] { display: none !important; }
+[data-page="bold"] .site-header { border-bottom: 0; }
+[data-page="bold"] main { padding: 0 4%; }
+[data-page="bold"] .project-logo { border-radius: 0; width: 46px; height: 46px; }
+.bold-cover { border-top: 2px solid var(--ink); padding: 24px 0 32px; }
+.bold-project-line { display: flex; align-items: center; gap: 16px; font-size: 12px; }
+.bold-project-line > span:not(.project-logo) { color: var(--muted); }
+.bold-project-line > a { margin-left: auto; border-bottom: 1px solid; padding-bottom: 3px; }
+.bold-cover h1 { font-size: clamp(48px, 11.6vw, 190px); line-height: .95; font-weight: 900; letter-spacing: -.075em; margin: 36px 0; }
+.bold-cover-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: start; }
+.bold-cover-bottom > p { max-width: 500px; font-size: clamp(17px, 1.5vw, 23px); line-height: 1.5; margin-bottom: 0; }
+.bold-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+.bold-facts dt { font-size: 11px; color: var(--muted); }
+.bold-facts dd { margin: 4px 0 0; font-size: 13px; }
+
+/* Walkthrough: selected screen in front, adjacent screens behind it. */
+.bold-walkthrough { display: grid; grid-template-columns: minmax(240px, .75fr) minmax(0, 1.75fr); border: 2px solid var(--ink); margin: 16px 0 64px; }
+.walkthrough-menu { padding: 32px; border-right: 2px solid var(--ink); }
+.walkthrough-menu h2 { font-size: clamp(30px, 3vw, 48px); font-weight: 800; letter-spacing: -.055em; margin-bottom: 16px; }
+.walkthrough-menu > p { color: var(--muted); font-size: 12px; margin-bottom: 24px; }
+.walkthrough-steps { display: flex; flex-direction: column; }
+.walkthrough-steps button { display: grid; grid-template-columns: 24px 1fr 18px; gap: 12px; align-items: center; text-align: left; background: transparent; color: var(--ink); border: 0; border-top: 1px solid var(--line); padding: 16px 12px; cursor: pointer; font-size: 14px; }
+.walkthrough-steps button span { font-size: 11px; color: var(--muted); }
+.walkthrough-steps button span:last-child { text-align: right; }
+.walkthrough-steps button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+.walkthrough-steps button[aria-selected="true"] span { color: #333; }
+.walkthrough-steps button:hover:not([aria-selected="true"]) { background: #252524; }
+.walkthrough-stage { position: relative; min-width: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 32px 24px 20px; background: var(--surface); }
+.flow-figure { position: relative; z-index: 1; margin: 0; width: 100%; display: flex; flex-direction: column; align-items: center; }
+.flow-figure img { height: 430px; width: auto; max-width: 65%; object-fit: contain; border-radius: 24px; border: 3px solid #444; background: #111; box-shadow: 0 12px 32px #0008; }
+.flow-figure figcaption { text-align: center; max-width: 380px; min-height: 44px; font-size: 12px; margin-top: 24px; padding: 0 8px; color: var(--muted); }
+.screen-composition { position: absolute; inset: 0; pointer-events: none; }
+.companion-screen { position: absolute; top: 80px; height: 360px; width: auto; max-width: 32%; object-fit: contain; border-radius: 20px; opacity: .35; }
+.screen-before { left: 10%; transform: rotate(-12deg); }
+.screen-after { right: 10%; transform: rotate(12deg); }
+.flow-controls { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; width: min(100%, 400px); gap: 24px; font-size: 11px; margin-top: 16px; }
+.flow-controls button { width: 42px; height: 38px; background: transparent; border: 1px solid #777; color: var(--ink); cursor: pointer; font-size: 18px; }
+.flow-controls button:hover { background: #333; }
+
+/* Chapters use one wide panel; the full reading mode reveals every panel. */
+.bold-case-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 24px; }
+.bold-case-heading h2 { font-size: clamp(32px, 5vw, 72px); font-weight: 800; letter-spacing: -.055em; margin: 0; }
+.bold-case-heading button { background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 12px 18px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+.bold-case-heading button:hover { border-color: var(--ink); }
+.chapter-selector { display: grid; grid-template-columns: repeat(7, 1fr); border: 1px solid var(--line); }
+.chapter-selector button { padding: 18px 12px; border: 0; border-right: 1px solid var(--line); color: var(--ink); background: transparent; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 18px; }
+.chapter-selector button:last-child { border-right: 0; }
+.chapter-selector button > span:first-child { font-size: 28px; font-weight: 700; letter-spacing: -.05em; }
+.chapter-selector button > span:last-child { font-size: 12px; }
+.chapter-selector button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+.chapter-selector button:hover:not([aria-selected="true"]) { background: #252524; }
+.bold-chapter { display: grid; grid-template-columns: .25fr 1fr .5fr; gap: 4%; align-items: start; border-bottom: 1px solid var(--line); padding: 40px 0; min-height: 510px; }
+.chapter-number { font-size: clamp(60px, 9vw, 140px); line-height: .85; font-weight: 900; letter-spacing: -.09em; color: #737371; }
+.bold-chapter-copy { max-width: 680px; }
+.bold-chapter-copy h3 { font-size: clamp(26px, 3vw, 46px); font-weight: 700; line-height: 1.12; letter-spacing: -.045em; margin-bottom: 24px; }
+.bold-chapter-copy p { font-size: 15px; line-height: 1.8; color: #d1d1ce; margin-bottom: 16px; }
+.bold-chapter-copy ul, .bold-chapter-copy ol { padding-left: 20px; font-size: 14px; line-height: 1.8; }
+.bold-chapter-copy li { padding: 4px 0 4px 8px; }
+.bold-chapter figure { margin: 0; }
+.bold-chapter figure img { max-height: 380px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; border-radius: 16px; }
+.bold-chapter figcaption { font-size: 11px; color: var(--muted); margin-top: 20px; line-height: 1.6; }
+.chapter-controls { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin: 20px 0 0; font-size: 12px; }
+.chapter-controls button { padding: 12px 16px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font-size: 12px; }
+.chapter-controls button:hover:not(:disabled) { background: #252524; }
+.chapter-controls button:disabled { opacity: .35; cursor: default; }
+[data-page="bold"] .compare-section { margin: 64px 0 40px; border-top: 2px solid var(--ink); }
+[data-page="bold"] .compare-section h2 { font-weight: 800; }
+
+@media (max-width: 1000px) {
+  .walkthrough-menu { padding: 24px; }
+  .bold-walkthrough { grid-template-columns: minmax(220px, .9fr) minmax(0, 1.1fr); }
+  .companion-screen { max-width: 40%; }
+  .screen-before { left: 0; }
+  .screen-after { right: 0; }
+  .chapter-selector { grid-template-columns: repeat(4, 1fr); }
+  .chapter-selector button { border-bottom: 1px solid var(--line); }
+  .bold-chapter { grid-template-columns: 72px minmax(0, 1fr); min-height: 0; }
+  .bold-chapter figure { grid-column: 2; display: flex; align-items: end; gap: 24px; margin-top: 16px; }
+  .bold-chapter figure img { height: 280px; margin: 0; }
+  .bold-chapter figcaption { max-width: 230px; }
+}
+
+@media (max-width: 700px) {
+  .bold-project-line { flex-wrap: wrap; gap: 12px; }
+  .bold-project-line > a { margin-left: 0; font-size: 11px; }
+  .bold-project-line > span:not(.project-logo) { flex: 1; font-size: 11px; }
+  .bold-cover h1 { font-size: 11.4vw; margin: 28px 0; }
+  .bold-cover-bottom { grid-template-columns: 1fr; gap: 28px; }
+  .bold-walkthrough { grid-template-columns: 1fr; margin-bottom: 40px; }
+  .walkthrough-menu { border-right: 0; border-bottom: 2px solid var(--ink); padding: 20px; }
+  .walkthrough-menu h2 br { display: none; }
+  .walkthrough-menu h2 { font-size: 32px; }
+  .walkthrough-menu > p { margin-bottom: 16px; }
+  .walkthrough-steps { display: grid; grid-template-columns: 1fr 1fr; }
+  .walkthrough-steps button { font-size: 12px; padding: 12px 6px; gap: 6px; grid-template-columns: 20px 1fr 12px; }
+  .walkthrough-stage { padding: 24px 16px 16px; }
+  .flow-figure img { height: 360px; }
+  .companion-screen { height: 290px; top: 65px; }
+  .bold-case-heading { align-items: start; flex-direction: column; gap: 16px; }
+  .bold-case-heading h2 { font-size: 40px; }
+  .chapter-selector { display: flex; overflow-x: auto; }
+  .chapter-selector button { flex: 0 0 112px; gap: 10px; padding: 12px; }
+  .chapter-selector button > span:first-child { font-size: 24px; }
+  .bold-chapter { grid-template-columns: 40px minmax(0, 1fr); gap: 20px; padding: 28px 0; }
+  .chapter-number { font-size: 42px; }
+  .bold-chapter-copy h3 { font-size: 28px; }
+  .bold-chapter figure { display: block; }
+  .bold-chapter figure img { max-width: 100%; height: 320px; margin: auto; }
+  .bold-chapter figcaption { max-width: none; }
+  .chapter-controls { gap: 12px; font-size: 11px; }
+  .chapter-controls button { padding: 10px 8px; font-size: 11px; }
+}
